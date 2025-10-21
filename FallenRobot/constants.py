@@ -1,4 +1,5 @@
 from os import environ
 
-LOAD = environ.get("LOAD", "").split()
-NO_LOAD = environ.get("NO_LOAD", "").split()
+ALLOW_EXCL = bool(os.environ.get("ALLOW_EXCL", False))
+LOAD = os.environ.get("LOAD", "").split()
+NO_LOAD = os.environ.get("NO_LOAD", "").split()

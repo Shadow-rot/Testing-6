@@ -1,6 +1,9 @@
 import importlib
 import re
 import time
+import html
+import json
+import traceback
 from platform import python_version as y
 from sys import argv
 
@@ -27,8 +30,23 @@ from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
 import FallenRobot.modules.sql.users_sql as sql
-from FallenRobot import LOAD, NO_LOAD, ALLOW_EXCL
-from FallenRobot import LOGGER, OWNER_ID, BOT_NAME, BOT_USERNAME, TOKEN, StartTime, SUPPORT_CHAT, START_IMG
+from FallenRobot import (
+    LOAD,
+    NO_LOAD,
+    ALLOW_EXCL,
+    LOGGER,
+    OWNER_ID,
+    BOT_NAME,
+    BOT_USERNAME,
+    TOKEN,
+    StartTime,
+    SUPPORT_CHAT,
+    START_IMG,
+    dispatcher,
+    updater,
+    telethn,
+    pbot,
+)
 from FallenRobot.modules import ALL_MODULES
 from FallenRobot.modules.helper_funcs.chat_status import is_user_admin
 from FallenRobot.modules.helper_funcs.misc import paginate_modules
@@ -203,7 +221,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             START_IMG,
-            caption="ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ !\n<b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ​:</b> <code>{}</code>".format(
+            caption="ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ !\n<b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,

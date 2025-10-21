@@ -47,6 +47,8 @@ if ENV:
         "START_IMG", "https://telegra.ph/file/40eb1ed850cdea274693e.jpg"
     )
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./downloads/")
+    CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
+    TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     
     # Additional optional configs
     INFOPIC = bool(os.environ.get("INFOPIC", False))
@@ -85,6 +87,8 @@ else:
     MONGO_DB_URI = Config.MONGO_DB_URI
     START_IMG = Config.START_IMG
     TEMP_DOWNLOAD_DIRECTORY = getattr(Config, "TEMP_DOWNLOAD_DIRECTORY", "./downloads/")
+    CASH_API_KEY = getattr(Config, "CASH_API_KEY", None)
+    TIME_API_KEY = getattr(Config, "TIME_API_KEY", None)
     
     INFOPIC = getattr(Config, "INFOPIC", False)
     BOT_API_URL = getattr(Config, "BOT_API_URL", "https://api.telegram.org/bot")

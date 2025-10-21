@@ -74,6 +74,7 @@ else:
     TIGERS = set(Config.TIGERS or [])
     WOLVES = set(Config.WOLVES or [])
     BL_CHATS = set(Config.BL_CHATS or [])
+    ALLOW_EXCL = set(Config.ALLOW_EXCL or [])
 
 # ---------- Core user sets ----------
 DRAGONS.add(OWNER_ID)

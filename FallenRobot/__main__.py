@@ -27,6 +27,7 @@ from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
 import FallenRobot.modules.sql.users_sql as sql
+from FallenRobot.constants import LOAD, NO_LOAD
 from FallenRobot import (
     BOT_NAME,
     BOT_USERNAME,

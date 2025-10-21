@@ -28,21 +28,7 @@ from telethon import __version__ as tlhver
 
 import FallenRobot.modules.sql.users_sql as sql
 from FallenRobot.constants import LOAD, NO_LOAD, ALLOW_EXCL
-from FallenRobot import LOGGER
-from FallenRobot import (
-    BOT_NAME,
-    BOT_USERNAME,
-    LOGGER,
-    OWNER_ID,
-    START_IMG,
-    SUPPORT_CHAT,
-    TOKEN,
-    StartTime,
-    dispatcher,
-    pbot,
-    telethn,
-    updater,
-)
+from FallenRobot import LOGGER, OWNER_ID, BOT_NAME, BOT_USERNAME, TOKEN, StartTime, SUPPORT_CHAT, START_IMG
 from FallenRobot.modules import ALL_MODULES
 from FallenRobot.modules.helper_funcs.chat_status import is_user_admin
 from FallenRobot.modules.helper_funcs.misc import paginate_modules

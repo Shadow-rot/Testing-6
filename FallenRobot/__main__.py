@@ -28,6 +28,7 @@ from telethon import __version__ as tlhver
 
 import FallenRobot.modules.sql.users_sql as sql
 from FallenRobot.constants import LOAD, NO_LOAD, ALLOW_EXCL
+from FallenRobot import LOGGER
 from FallenRobot import (
     BOT_NAME,
     BOT_USERNAME,

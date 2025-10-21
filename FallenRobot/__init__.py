@@ -129,11 +129,24 @@ DEV_USERS.add(5147822244)
 
 # ---------- Bot clients ----------
 
-updater = Updater(TOKEN, workers=WORKERS, use_context=True)
-dispatcher = updater.dispatcher
+try:
+    updater = Updater(TOKEN, workers=WORKERS, use_context=True)
+    dispatcher = updater.dispatcher
+except Exception as e:
+    LOGGER.error(f"Failed to initialize Updater: {e}")
+    sys.exit(1)
 
-telethn = TelegramClient("Fallen", API_ID, API_HASH)
-pbot = Client("FallenRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+try:
+    telethn = TelegramClient("Fallen", API_ID, API_HASH)
+except Exception as e:
+    LOGGER.error(f"Failed to initialize TelegramClient: {e}")
+    telethn = None
+
+try:
+    pbot = Client("FallenRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+except Exception as e:
+    LOGGER.error(f"Failed to initialize Pyrogram Client: {e}")
+    pbot = None
 
 # ---------- Bot basic info ----------
 

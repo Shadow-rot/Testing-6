@@ -1,5 +1,5 @@
-from FallenRobot import LOAD, LOGGER, NO_LOAD
-
+from FallenRobot import LOGGER
+from FallenRobot.constants import LOAD, NO_LOAD
 
 def __list_all_modules():
     import glob

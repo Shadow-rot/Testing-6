@@ -46,6 +46,7 @@ if ENV:
     START_IMG = os.environ.get(
         "START_IMG", "https://telegra.ph/file/40eb1ed850cdea274693e.jpg"
     )
+    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./downloads/")
     
     # Additional optional configs
     INFOPIC = bool(os.environ.get("INFOPIC", False))
@@ -83,6 +84,7 @@ else:
     DB_URI = Config.DATABASE_URL
     MONGO_DB_URI = Config.MONGO_DB_URI
     START_IMG = Config.START_IMG
+    TEMP_DOWNLOAD_DIRECTORY = getattr(Config, "TEMP_DOWNLOAD_DIRECTORY", "./downloads/")
     
     INFOPIC = getattr(Config, "INFOPIC", False)
     BOT_API_URL = getattr(Config, "BOT_API_URL", "https://api.telegram.org/bot")
@@ -101,6 +103,10 @@ else:
     TIGERS = set(Config.TIGERS or [])
     WOLVES = set(Config.WOLVES or [])
     BL_CHATS = set(Config.BL_CHATS or [])
+
+# ---------- Create temp download directory ----------
+if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
+    os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
 
 # ---------- Custom constants ----------
 ALLOW_EXCL = bool(os.environ.get("ALLOW_EXCL", True))

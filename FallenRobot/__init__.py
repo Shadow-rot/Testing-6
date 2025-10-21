@@ -40,11 +40,24 @@ if ENV:
 
     OWNER_ID = int(os.environ["OWNER_ID"])
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "DevilsHeavenMF")
+    EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     DB_URI = os.environ.get("DATABASE_URL")
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI")
     START_IMG = os.environ.get(
         "START_IMG", "https://telegra.ph/file/40eb1ed850cdea274693e.jpg"
     )
+    
+    # Additional optional configs
+    INFOPIC = bool(os.environ.get("INFOPIC", False))
+    BOT_API_URL = os.environ.get("BOT_API_URL", "https://api.telegram.org/bot")
+    BOT_API_FILE_URL = os.environ.get(
+        "BOT_API_FILE_URL", "https://api.telegram.org/file/bot"
+    )
+    DONATION_LINK = os.environ.get("DONATION_LINK")
+    CERT_PATH = os.environ.get("CERT_PATH")
+    PORT = int(os.environ.get("PORT", 5000))
+    WEBHOOK = bool(os.environ.get("WEBHOOK", False))
+    URL = os.environ.get("URL", "")  # Webhook URL
 
     # Optional sets
     def parse_ids(var):
@@ -66,9 +79,21 @@ else:
     WORKERS = Config.WORKERS
     OWNER_ID = int(Config.OWNER_ID)
     SUPPORT_CHAT = Config.SUPPORT_CHAT
+    EVENT_LOGS = getattr(Config, "EVENT_LOGS", None)
     DB_URI = Config.DATABASE_URL
     MONGO_DB_URI = Config.MONGO_DB_URI
     START_IMG = Config.START_IMG
+    
+    INFOPIC = getattr(Config, "INFOPIC", False)
+    BOT_API_URL = getattr(Config, "BOT_API_URL", "https://api.telegram.org/bot")
+    BOT_API_FILE_URL = getattr(
+        Config, "BOT_API_FILE_URL", "https://api.telegram.org/file/bot"
+    )
+    DONATION_LINK = getattr(Config, "DONATION_LINK", None)
+    CERT_PATH = getattr(Config, "CERT_PATH", None)
+    PORT = getattr(Config, "PORT", 5000)
+    WEBHOOK = getattr(Config, "WEBHOOK", False)
+    URL = getattr(Config, "URL", "")
 
     DRAGONS = set(Config.DRAGONS or [])
     DEV_USERS = set(Config.DEV_USERS or [])
@@ -83,7 +108,8 @@ LOAD = os.environ.get("LOAD", "").split()
 NO_LOAD = os.environ.get("NO_LOAD", "").split()
 DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
 STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", False))
-WORKERS = int(os.environ.get("WORKERS", 8))
+BAN_STICKER = os.environ.get("BAN_STICKER", "CAADAgADOwADPPEcAXkko5EB3YGYAg")
+WALL_API = os.environ.get("WALL_API", None)
 
 # ---------- Core user sets ----------
 

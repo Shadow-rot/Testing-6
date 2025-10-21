@@ -33,7 +33,6 @@ class Config(object):
     WOLVES = []  # User id of whitelist users
 
     ALLOW_CHATS = True
-    ALLOW_EXCL = True
     DEL_CMDS = True
     INFOPIC = True
     LOAD = []

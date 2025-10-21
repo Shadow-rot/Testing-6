@@ -9,14 +9,14 @@ class Config(object):
 
     DATABASE_URL = "postgres://uf0rq148kethbk:pe7bfc383f862d959dd60453cb69dad02e3d4539dd5eafe518911575f763c4ce5@cfrvfq74n7n5dp.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d134luiuq6ltbe"  # A sql database url from elephantsql.com
 
-    EVENT_LOGS = (-1002059929123)  # Event logs channel to note down important bot level events
+    EVENT_LOGS = (-1002191083108)  # Event logs channel to note down important bot level events
 
     MONGO_DB_URI = "mongodb+srv://teamdaxx123:teamdaxx123@cluster0.ysbpgcp.mongodb.net/?retryWrites=true&w=majority"  # Get ths value from cloud.mongodb.com
 
     # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://te.legra.ph/file/40eb1ed850cdea274693e.jpg"
 
-    SUPPORT_CHAT = "DevilsHeavenMF"  # Your Telegram support group chat username where your users will go and bother you
+    SUPPORT_CHAT = "loooooooohkooe"  # Your Telegram support group chat username where your users will go and bother you
 
     TOKEN = "7891572866:AAEKgMqTNK0vQ_mAw63YFKdL6bD2oEiss14"  # Get bot token from @BotFather on Telegram
 

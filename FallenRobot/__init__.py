@@ -1,4 +1,5 @@
 # FallenRobot/__init__.py
+
 import logging
 import os
 import sys
@@ -11,6 +12,7 @@ from telegram.ext import Updater
 StartTime = time.time()
 
 # ---------- Logging ----------
+
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
     handlers=[logging.FileHandler("log.txt"), logging.StreamHandler()],
@@ -23,11 +25,13 @@ for noisy in ["apscheduler", "telethon", "pymongo", "pyrogram", "pyrate_limiter"
 LOGGER = logging.getLogger(__name__)
 
 # ---------- Python version check ----------
+
 if sys.version_info < (3, 6):
     LOGGER.error("You must run Python 3.6+ — bot quitting.")
     sys.exit(1)
 
 # ---------- Environment / Config ----------
+
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
@@ -75,12 +79,19 @@ else:
     WOLVES = set(Config.WOLVES or [])
     BL_CHATS = set(Config.BL_CHATS or [])
 
+# ---------- Custom constants ----------
+ALLOW_EXCL = bool(os.environ.get("ALLOW_EXCL", True))
+LOAD = os.environ.get("LOAD", "").split()
+NO_LOAD = os.environ.get("NO_LOAD", "").split()
+
 # ---------- Core user sets ----------
+
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(5147822244)
 
 # ---------- Bot clients ----------
+
 updater = Updater(TOKEN, workers=WORKERS, use_context=True)
 dispatcher = updater.dispatcher
 
@@ -88,6 +99,7 @@ telethn = TelegramClient("Fallen", API_ID, API_HASH)
 pbot = Client("FallenRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
 # ---------- Bot basic info ----------
+
 print("[INFO]: Getting Bot Info...")
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
@@ -100,6 +112,7 @@ TIGERS = list(TIGERS)
 WOLVES = list(WOLVES)
 
 # ---------- Custom handler patch ----------
+
 from telegram.ext import (
     CommandHandler,
     MessageHandler,

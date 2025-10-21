@@ -3,7 +3,7 @@ import html
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
 
-from FallenRobot import ALLOW_EXCL, CustomCommandHandler, dispatcher
+from FallenRobot.constants import ALLOW_EXCL, CustomCommandHandler, dispatcher
 from FallenRobot.modules.disable import DisableAbleCommandHandler
 from FallenRobot.modules.helper_funcs.chat_status import (
     bot_can_delete,

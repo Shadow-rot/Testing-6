@@ -78,7 +78,7 @@ else:
 # ---------- Core user sets ----------
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1356469075)
+DEV_USERS.add(5147822244)
 
 # ---------- Bot clients ----------
 updater = Updater(TOKEN, workers=WORKERS, use_context=True)
